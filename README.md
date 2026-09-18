@@ -1,2 +1,1 @@
-# plataforma-sorteio
-Plataforma de sorteio da Comunidade Drupal Brasil
+# Plataforma de sorteio da Comunidade Drupal Brasil
