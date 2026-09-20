@@ -1,0 +1,14 @@
+entity.prize.settings:
+  title: 'Prêmio'
+  description: 'Configure a Prize entity type.'
+  route_name:  entity.prize.settings
+  parent: system.admin_structure
+
+entity.prize.collection:
+  title: 'Prêmios'
+  description: 'Lista de prêmios.'
+  route_name: entity.prize.collection
+  parent: system.admin_content
+  options:
+    icon:
+      icon_id: file

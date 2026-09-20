@@ -1,0 +1,10 @@
+entity.prize.edit_form:
+  route_name: entity.prize.edit_form
+  group: prize
+  title: 'Edit'
+
+entity.prize.delete_form:
+  route_name: entity.prize.delete_form
+  group: prize
+  title: 'Delete'
+  weight: 10

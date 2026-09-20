@@ -1,0 +1,10 @@
+entity.lottery.edit_form:
+  route_name: entity.lottery.edit_form
+  group: lottery
+  title: 'Edit'
+
+entity.lottery.delete_form:
+  route_name: entity.lottery.delete_form
+  group: lottery
+  title: 'Delete'
+  weight: 10

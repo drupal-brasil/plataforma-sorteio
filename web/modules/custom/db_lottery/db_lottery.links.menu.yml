@@ -1,0 +1,14 @@
+entity.lottery.settings:
+  title: 'Loteria'
+  description: 'Configure a Lottery entity type.'
+  route_name:  entity.lottery.settings
+  parent: system.admin_structure
+
+entity.lottery.collection:
+  title: 'Loterias'
+  description: 'List of lotteries.'
+  route_name: entity.lottery.collection
+  parent: system.admin_content
+  options:
+    icon:
+      icon_id: navigation-content

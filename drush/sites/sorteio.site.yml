@@ -1,0 +1,3 @@
+prod:
+  root: /srv/www/sorteio/web
+  uri: https://sorteio.drupal.tec.br

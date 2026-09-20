@@ -1,0 +1,12 @@
+name: lottery-db
+recipe: drupal11
+config:
+  php: "8.4"
+  via: apache:2.4
+  database: mysql:8.0
+  composer_version: 2-latest
+  drush: ^13
+  webroot: web
+  xdebug: true
+  config:
+    php: .lando/php.ini

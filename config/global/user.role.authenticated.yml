@@ -1,0 +1,26 @@
+uuid: bdcf2ebc-0a7b-4a5c-9cae-dde10dcdd9ee
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_lottery_subscription
+    - media
+    - navigation
+    - system
+    - toolbar
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Usuário autenticado'
+weight: 1
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access navigation'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'change own username'
+  - 'register lottery_subscription'
+  - 'view media'
+  - 'view the administration theme'

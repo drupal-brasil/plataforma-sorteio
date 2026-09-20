@@ -1,0 +1,11 @@
+uuid: 12673bed-bc45-4a1e-aad3-d58241ab4164
+langcode: pt-br
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Usuário anônimo'
+weight: 0
+is_admin: false
+permissions: {  }

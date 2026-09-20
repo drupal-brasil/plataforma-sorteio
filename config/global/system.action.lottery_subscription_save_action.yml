@@ -1,0 +1,13 @@
+uuid: 4de391b4-e399-43c8-95e2-2032a9864a23
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_lottery_subscription
+_core:
+  default_config_hash: 9Lc5slI32lK98EPRtGCcUHkkCpaTHK9arxcPpmCeG6w
+id: lottery_subscription_save_action
+label: 'Save lottery subscriptions'
+type: lottery_subscription
+plugin: 'entity:save_action:lottery_subscription'
+configuration: {  }

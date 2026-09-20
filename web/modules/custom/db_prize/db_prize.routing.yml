@@ -1,0 +1,7 @@
+entity.prize.settings:
+  path: 'admin/structure/prize'
+  defaults:
+    _form: '\Drupal\db_prize\Form\PrizeSettingsForm'
+    _title: 'Prêmio'
+  requirements:
+    _permission: 'administer prize'

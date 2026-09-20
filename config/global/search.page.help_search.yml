@@ -1,0 +1,14 @@
+uuid: 8e12a3c9-2e02-46d5-b8bc-4fc745e83172
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - search_help
+_core:
+  default_config_hash: 3RtOcijLVSktZYOSAfTWAQQAg8DaOaQGYDVdlR2CdVI
+id: help_search
+label: Ajuda
+path: help
+weight: 0
+plugin: help_search
+configuration: {  }

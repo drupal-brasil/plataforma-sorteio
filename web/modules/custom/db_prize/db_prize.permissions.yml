@@ -1,0 +1,11 @@
+administer prize:
+  title: 'Administer prizes'
+  restrict access: true
+view prize:
+  title: 'View prize'
+edit prize:
+  title: 'Edit prize'
+delete prize:
+  title: 'Delete prize'
+create prize:
+  title: 'Create prize'

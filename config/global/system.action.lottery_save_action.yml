@@ -1,0 +1,13 @@
+uuid: 8f955202-c7cb-4e93-ab23-4f954a2c6f0e
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_lottery
+_core:
+  default_config_hash: 9pr6RJkjUwsCQD2ZEe4GrIwu7_O3mw6ptig5nf_1rX0
+id: lottery_save_action
+label: 'Save lotteries'
+type: lottery
+plugin: 'entity:save_action:lottery'
+configuration: {  }

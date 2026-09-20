@@ -1,0 +1,25 @@
+entity.lottery_subscription.settings:
+  path: 'admin/structure/lottery-subscription'
+  defaults:
+    _form: '\Drupal\db_lottery_subscription\Form\LotterySubscriptionSettingsForm'
+    _title: 'Configuração de Inscrição Sorteio'
+  requirements:
+    _permission: 'administer lottery_subscription'
+
+entity.lottery_subscription.register:
+  path: 'admin/lottery-subscription/register'
+  defaults:
+    _title: 'Inscrição no sorteio'
+    _form: 'Drupal\db_lottery_subscription\Form\LotteryUserSubscription'
+  requirements:
+    _permission: 'register lottery_subscription'
+    _user_is_logged_in: 'TRUE'
+
+entity.lottery_subscription.live:
+  path: 'admin/lottery-subscription/live'
+  defaults:
+    _title: 'Sorteio ao vivo'
+    _form: 'Drupal\db_lottery_subscription\Form\LotteryLiveForm'
+  requirements:
+    _permission: 'live lottery_subscription'
+    _user_is_logged_in: 'TRUE'

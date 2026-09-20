@@ -1,0 +1,13 @@
+uuid: ec883dc4-7e4e-4989-830a-1a2d39bc4654
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_lottery
+_core:
+  default_config_hash: bcV11sk1rxiLTJq2VuzRbjOtU35CNUoKr8-m7NcjClU
+id: lottery_delete_action
+label: 'Delete lotteries'
+type: lottery
+plugin: 'entity:delete_action:lottery'
+configuration: {  }

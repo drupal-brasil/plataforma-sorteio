@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - db_lottery
+id: lottery_delete_action
+label: 'Delete lotteries'
+type: lottery
+plugin: entity:delete_action:lottery
+configuration: {  }

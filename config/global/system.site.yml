@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: pt-br
+uuid: 0f713986-8154-44e7-9c46-c61d92029d2b
+name: 'Sorteio Drupal Brasil'
+mail: webmaster@lottery-db.lndo.site
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: pt-br
+mail_notification: ''

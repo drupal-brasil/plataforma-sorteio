@@ -1,0 +1,22 @@
+entity.prize.settings:
+  title: 'Settings'
+  route_name: entity.prize.settings
+  base_route: entity.prize.settings
+entity.prize.view:
+  title: 'View'
+  route_name: entity.prize.canonical
+  base_route: entity.prize.canonical
+entity.prize.edit_form:
+  title: 'Edit'
+  route_name: entity.prize.edit_form
+  base_route: entity.prize.canonical
+entity.prize.delete_form:
+  title: 'Delete'
+  route_name: entity.prize.delete_form
+  base_route: entity.prize.canonical
+  weight: 10
+entity.prize.collection:
+  title: 'Prêmios'
+  route_name: entity.prize.collection
+  base_route: system.admin_content
+  weight: 10

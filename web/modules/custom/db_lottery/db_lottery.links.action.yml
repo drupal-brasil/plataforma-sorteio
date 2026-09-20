@@ -1,0 +1,5 @@
+lottery.add_form:
+  title: 'Adicionar loteria'
+  route_name: entity.lottery.add_form
+  appears_on:
+    - entity.lottery.collection

@@ -1,0 +1,9 @@
+live_draw:
+  css:
+    theme:
+      css/lottery-live.css: {}
+  js:
+    js/lottery-live.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

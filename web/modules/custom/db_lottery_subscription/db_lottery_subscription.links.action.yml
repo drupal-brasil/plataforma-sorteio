@@ -1,0 +1,5 @@
+lottery_subscription.add_form:
+  title: 'Adicionar inscrito'
+  route_name: entity.lottery_subscription.add_form
+  appears_on:
+    - entity.lottery_subscription.collection

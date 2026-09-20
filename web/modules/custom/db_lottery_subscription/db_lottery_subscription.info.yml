@@ -1,0 +1,7 @@
+name: 'Inscrição Sorteio'
+type: module
+description: 'Inscrição no Sorteio'
+package: DrupalBrasil
+core_version_requirement: ^10 || ^11
+dependencies:
+  - db_lottery:db_lottery

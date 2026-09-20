@@ -1,0 +1,13 @@
+uuid: 5dc1515d-2583-4e2b-95e2-ebfd9d978cf2
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_prize
+_core:
+  default_config_hash: HRTu-J2AjR-sT-_jED4zKvFnEps4Mnkd5DnJz4c6FpI
+id: prize_delete_action
+label: 'Delete prizes'
+type: prize
+plugin: 'entity:delete_action:prize'
+configuration: {  }

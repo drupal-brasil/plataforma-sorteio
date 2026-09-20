@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - db_lottery_subscription
+id: lottery_subscription_save_action
+label: 'Save lottery subscriptions'
+type: lottery_subscription
+plugin: entity:save_action:lottery_subscription
+configuration: {  }

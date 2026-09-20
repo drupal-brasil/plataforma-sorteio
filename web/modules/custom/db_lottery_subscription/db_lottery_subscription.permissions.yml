@@ -1,0 +1,15 @@
+administer lottery_subscription:
+  title: 'Administer lottery subscriptions'
+  restrict access: true
+view lottery_subscription:
+  title: 'View lottery subscription'
+edit lottery_subscription:
+  title: 'Edit lottery subscription'
+delete lottery_subscription:
+  title: 'Delete lottery subscription'
+create lottery_subscription:
+  title: 'Create lottery subscription'
+register lottery_subscription:
+  title: 'Register for lottery subscription'
+live lottery_subscription:
+  title: 'Register for live lottery'

@@ -1,0 +1,13 @@
+uuid: cdcc9b86-7f59-43c7-b98b-7a477aa80c51
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_lottery_subscription
+_core:
+  default_config_hash: uA9dY9hztC-Al_AYCc2-XZlpWdEJk3sI-f_qMdZZ4B8
+id: lottery_subscription_delete_action
+label: 'Delete lottery subscriptions'
+type: lottery_subscription
+plugin: 'entity:delete_action:lottery_subscription'
+configuration: {  }

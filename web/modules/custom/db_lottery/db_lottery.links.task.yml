@@ -1,0 +1,22 @@
+entity.lottery.settings:
+  title: 'Settings'
+  route_name: entity.lottery.settings
+  base_route: entity.lottery.settings
+entity.lottery.view:
+  title: 'View'
+  route_name: entity.lottery.canonical
+  base_route: entity.lottery.canonical
+entity.lottery.edit_form:
+  title: 'Edit'
+  route_name: entity.lottery.edit_form
+  base_route: entity.lottery.canonical
+entity.lottery.delete_form:
+  title: 'Delete'
+  route_name: entity.lottery.delete_form
+  base_route: entity.lottery.canonical
+  weight: 10
+entity.lottery.collection:
+  title: 'Sorteios'
+  route_name: entity.lottery.collection
+  base_route: system.admin_content
+  weight: 10

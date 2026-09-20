@@ -1,0 +1,7 @@
+entity.lottery.settings:
+  path: 'admin/structure/lottery'
+  defaults:
+    _form: '\Drupal\db_lottery\Form\LotterySettingsForm'
+    _title: 'Loteria'
+  requirements:
+    _permission: 'administer lottery'

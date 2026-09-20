@@ -1,0 +1,13 @@
+uuid: 5ef9fa5c-b9a3-448e-8317-167869126c8a
+langcode: pt-br
+status: true
+dependencies:
+  module:
+    - db_prize
+_core:
+  default_config_hash: VJKf6H5xjyGZAdD-duOGvnotqzgEJvIslyAT9XXqgNM
+id: prize_save_action
+label: 'Save prizes'
+type: prize
+plugin: 'entity:save_action:prize'
+configuration: {  }

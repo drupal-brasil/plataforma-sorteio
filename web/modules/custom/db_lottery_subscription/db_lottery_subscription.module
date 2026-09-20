@@ -1,0 +1,153 @@
+<?php
+
+declare(strict_types=1);
+
+/**
+ * @file
+ * Provides a lottery subscription entity type.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function db_lottery_subscription_theme(): array {
+  return [
+    'lottery_subscription' => ['render element' => 'elements'],
+  ];
+}
+
+/**
+ * Prepares variables for lottery subscription templates.
+ *
+ * Default template: lottery-subscription.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the lottery subscription information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_lottery_subscription(array &$variables): void {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function db_lottery_subscription_user_cancel($edit, UserInterface $account, $method): void {
+  switch ($method) {
+    case 'user_cancel_block_unpublish':
+      // Unpublish lottery subscriptions.
+      $storage = \Drupal::entityTypeManager()->getStorage('lottery_subscription');
+      $lottery_subscription_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->accessCheck(FALSE)
+        ->execute();
+      foreach ($storage->loadMultiple($lottery_subscription_ids) as $lottery_subscription) {
+        $lottery_subscription->set('status', FALSE)->save();
+      }
+      break;
+
+    case 'user_cancel_reassign':
+      // Anonymize lottery subscriptions.
+      $storage = \Drupal::entityTypeManager()->getStorage('lottery_subscription');
+      $lottery_subscription_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->accessCheck(FALSE)
+        ->execute();
+      foreach ($storage->loadMultiple($lottery_subscription_ids) as $lottery_subscription) {
+        $lottery_subscription->setOwnerId(0)->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function db_lottery_subscription_user_predelete(UserInterface $account): void {
+  // Delete lottery subscriptions that belong to this account.
+  $storage = \Drupal::entityTypeManager()->getStorage('lottery_subscription');
+  $lottery_subscription_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->accessCheck(FALSE)
+    ->execute();
+  $storage->delete(
+    $storage->loadMultiple($lottery_subscription_ids)
+  );
+}
+
+/**
+ * Implements hook_navigation_menu_link_tree_alter().
+ */
+function db_lottery_subscription_navigation_menu_link_tree_alter(array &$tree): void {
+  foreach ($tree as $item) {
+    db_lottery_subscription_apply_navigation_icon($item);
+  }
+}
+
+/**
+ * Implements hook_gin_ignore_sticky_form_actions().
+ */
+function db_lottery_subscription_gin_ignore_sticky_form_actions(): array {
+  return [
+    'db_lottery_subscription_user_subscription',
+    'db_lottery_subscription_live',
+  ];
+}
+
+/**
+ * Adds supported navigation icons to custom content menu links.
+ *
+ * @param \Drupal\Core\Menu\MenuLinkTreeElement $item
+ *   The tree item to inspect and alter.
+ */
+function db_lottery_subscription_apply_navigation_icon(\Drupal\Core\Menu\MenuLinkTreeElement $item): void {
+  if ($item->link->getMenuName() !== 'content') {
+    return;
+  }
+
+  $route_map = [
+    'entity.prize.collection' => 'file',
+    'entity.lottery.collection' => 'navigation-content',
+    'entity.lottery_subscription.collection' => 'entity-user-collection',
+    'entity.lottery_subscription.register' => 'navigation-create',
+    'entity.lottery_subscription.live' => 'eye',
+  ];
+  $path_map = [
+    'admin/content/prize' => 'file',
+    'admin/content/lottery' => 'navigation-content',
+    'admin/content/lottery-subscription' => 'entity-user-collection',
+    'admin/lottery-subscription/register' => 'navigation-create',
+    'admin/lottery-subscription/live' => 'eye',
+  ];
+
+  $url = $item->link->getUrlObject();
+  $icon_id = NULL;
+
+  if ($url->isRouted()) {
+    $icon_id = $route_map[$url->getRouteName()] ?? NULL;
+  }
+
+  if ($icon_id === NULL && !$url->isExternal()) {
+    $icon_id = $path_map[$url->getInternalPath()] ?? NULL;
+  }
+
+  if ($icon_id !== NULL) {
+    $item->options['icon'] = [
+      'pack_id' => 'navigation',
+      'icon_id' => $icon_id,
+    ];
+  }
+
+  foreach ($item->subtree as $child) {
+    db_lottery_subscription_apply_navigation_icon($child);
+  }
+}

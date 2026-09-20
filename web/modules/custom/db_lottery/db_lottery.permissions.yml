@@ -1,0 +1,11 @@
+administer lottery:
+  title: 'Administer lotteries'
+  restrict access: true
+view lottery:
+  title: 'View lottery'
+edit lottery:
+  title: 'Edit lottery'
+delete lottery:
+  title: 'Delete lottery'
+create lottery:
+  title: 'Create lottery'

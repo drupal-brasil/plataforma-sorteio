@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - db_prize
+id: prize_delete_action
+label: 'Delete prizes'
+type: prize
+plugin: entity:delete_action:prize
+configuration: {  }

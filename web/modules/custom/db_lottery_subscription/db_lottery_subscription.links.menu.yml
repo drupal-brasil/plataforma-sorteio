@@ -1,0 +1,23 @@
+entity.lottery_subscription.settings:
+  title: 'Inscrição no sorteio'
+  description: 'Configure a Lottery Subscription entity type.'
+  route_name:  entity.lottery_subscription.settings
+  parent: system.admin_structure
+
+entity.lottery_subscription.collection:
+  title: 'Inscrições no sorteio'
+  description: 'List of lottery subscriptions.'
+  route_name: entity.lottery_subscription.collection
+  parent: system.admin_content
+  options:
+    icon:
+      icon_id: entity-user-collection
+
+entity.lottery_subscription.register:
+  title: 'Inscrição no sorteio'
+  description: 'Formulário de inscrição no sorteio.'
+  route_name: entity.lottery_subscription.register
+  parent: system.admin_content
+  options:
+    icon:
+      icon_id: navigation-create

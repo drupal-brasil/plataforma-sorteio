@@ -1,6 +1,4 @@
-# gitignore template for Drupal 8 projects
-#
-# earlier versions of Drupal are tracked in `community/PHP/`
+# The .gitignore template file for Drupal projects
 #
 # follows official upstream conventions:
 # https://www.drupal.org/docs/develop/using-composer
@@ -8,6 +6,13 @@
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
+!/web/sites/lndo.site
+
+# The production site configuration is intentionally versioned. Secrets such
+# as the Drupal hash salt are loaded from the server environment.
+!/web/sites/sorteio.drupal.tec.br/
+!/web/sites/sorteio.drupal.tec.br/settings.php
+!/web/sites/sorteio.drupal.tec.br/services.yml
 
 # Ignore paths that may contain user-generated content
 /web/sites/*/files
@@ -16,6 +21,14 @@
 /web/sites/*/files-public
 /web/sites/*/files-private
 
+# The Lando site configuration is versioned; its uploaded files are not.
+!/web/sites/lndo.site/
+!/web/sites/lndo.site/settings.php
+!/web/sites/lndo.site/lndo.site.settings.php
+!/web/sites/lndo.site/lndo.site.services.yml
+
+# SQLite data is runtime state and must be backed up/deployed separately.
+/database/*.sqlite
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
 /web/sites/*/tmp
@@ -24,6 +37,7 @@
 # Ignore drupal core (if not versioning drupal sources)
 /web/vendor
 /web/core
+/web/libraries
 /web/modules/README.txt
 /web/modules/contrib
 /web/profiles/README.txt
@@ -34,11 +48,15 @@
 /web/sites/README.txt
 /web/themes/README.txt
 /web/themes/contrib
+/drush/Commands/contrib
+/recipes/*
+!/recipes/README.txt
 /web/.csslintrc
 /web/.editorconfig
 /web/.eslintignore
 /web/.eslintrc.json
 /web/.gitattributes
+/web/.gitignore
 /web/.htaccess
 /web/.ht.router.php
 /web/autoload.php
@@ -49,6 +67,7 @@
 /web/INSTALL.txt
 /web/LICENSE.txt
 /web/README.txt
+/web/README.md
 /web/robots.txt
 /web/update.php
 /web/web.config
@@ -63,3 +82,13 @@
 /drush
 /drupal.phar
 /drupal
+
+# Drush site aliases are part of the deployment configuration.
+!/drush/
+!/drush/sites/
+!/drush/sites/sorteio.site.yml
+
+# Jetbins IDE
+.idea
+# macOS Finder to store custom view settings and layout preferences
+.DS_Store

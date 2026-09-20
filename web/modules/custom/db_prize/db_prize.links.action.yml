@@ -1,0 +1,5 @@
+prize.add_form:
+  title: 'Adicionar prêmio'
+  route_name: entity.prize.add_form
+  appears_on:
+    - entity.prize.collection
