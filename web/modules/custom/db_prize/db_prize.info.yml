@@ -3,3 +3,5 @@ type: module
 description: 'Prêmio do sorteio'
 package: DrupalBrasil
 core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:file
