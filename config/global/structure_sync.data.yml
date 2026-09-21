@@ -1,0 +1,66 @@
+menus:
+  -
+    menu_name: content
+    title: Prêmios
+    parent: null
+    uri: 'internal:/admin/content/prize'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: pt-br
+    uuid: 35b6ce4f-9106-4a01-929f-b437d62d5d6f
+    options: {  }
+  -
+    menu_name: content
+    title: Sorteios
+    parent: null
+    uri: 'internal:/admin/content/lottery'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: pt-br
+    uuid: 72ada7d9-8132-4b4a-908a-78716b8a5ff7
+    options: {  }
+  -
+    menu_name: content
+    title: 'Inscrições (admin)'
+    parent: null
+    uri: 'internal:/admin/content/lottery-subscription'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: pt-br
+    uuid: 68e57031-2fc0-42d0-b3b5-02e5a3d58dcc
+    options: {  }
+  -
+    menu_name: content
+    title: 'Inscrição no sorteio'
+    parent: null
+    uri: 'internal:/admin/lottery-subscription/register'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: pt-br
+    uuid: fabb6d8b-c7dd-4d17-a38e-6b058763ae59
+    options: {  }
+  -
+    menu_name: content
+    title: 'Sorteio ao vivo'
+    parent: null
+    uri: 'internal:/admin/lottery-subscription/live'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: pt-br
+    uuid: 856b4f30-971a-4b64-affa-d698874403a5
+    options: {  }
