@@ -1,0 +1,285 @@
+:root {
+  --lottery-ink: #182230;
+  --lottery-muted: #667085;
+  --lottery-border: #e4e7ec;
+  --lottery-surface: #ffffff;
+  --lottery-background: #f5f7fb;
+  --lottery-accent: #635bff;
+  --lottery-accent-dark: #4f46d8;
+  --lottery-mint: #dff8ef;
+  --lottery-sun: #fff1c7;
+  --lottery-shadow: 0 24px 60px rgba(24, 34, 48, 0.1);
+}
+
+.lottery-live {
+  position: relative;
+  isolation: isolate;
+  max-width: 1120px;
+  margin: 2rem auto;
+  padding: clamp(1.25rem, 3vw, 3rem);
+  overflow: hidden;
+  color: var(--lottery-ink);
+  background:
+    radial-gradient(circle at 100% 0, rgba(99, 91, 255, 0.12), transparent 32%),
+    linear-gradient(145deg, #ffffff 0%, var(--lottery-background) 100%);
+  border: 1px solid var(--lottery-border);
+  border-radius: 28px;
+  box-shadow: var(--lottery-shadow);
+}
+
+.lottery-live__hero {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.lottery-live__eyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--lottery-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lottery-live__title {
+  margin: 0;
+  color: var(--lottery-ink);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.lottery-live__description {
+  max-width: 650px;
+  margin: 1rem 0 0;
+  color: var(--lottery-muted);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.lottery-live__stats {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lottery-live__stat {
+  min-width: 0;
+  padding: 1.35rem;
+  background: var(--lottery-surface);
+  border: 1px solid var(--lottery-border);
+  border-radius: 18px;
+}
+
+.lottery-live__stat--accent {
+  border-color: rgba(99, 91, 255, 0.28);
+  background: linear-gradient(145deg, #f0efff, #ffffff);
+}
+
+.lottery-live__stat--sun {
+  border-color: #f5dfa0;
+  background: linear-gradient(145deg, var(--lottery-sun), #ffffff);
+}
+
+.lottery-live__stat--mint {
+  border-color: #b6ead8;
+  background: linear-gradient(145deg, var(--lottery-mint), #ffffff);
+}
+
+.lottery-live__stat-label,
+.lottery-live__stat-meta {
+  color: var(--lottery-muted);
+  font-size: 0.8rem;
+}
+
+.lottery-live__stat-label {
+  font-weight: 700;
+}
+
+.lottery-live__stat-value {
+  margin: 0.55rem 0;
+  overflow-wrap: anywhere;
+  color: var(--lottery-ink);
+  font-size: clamp(1.35rem, 2.3vw, 2rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.lottery-live__result {
+  position: relative;
+  z-index: 1;
+  min-height: 150px;
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  text-align: center;
+  background: var(--lottery-surface);
+  border: 1px dashed #cbd2dc;
+  border-radius: 20px;
+}
+
+.lottery-live__result--winner {
+  border: 1px solid rgba(6, 214, 160, 0.45);
+  background: linear-gradient(135deg, #edfff9, #ffffff);
+}
+
+.lottery-live__result-placeholder {
+  color: var(--lottery-muted);
+  font-size: 1rem;
+}
+
+.lottery-live__winner-badge {
+  display: inline-flex;
+  justify-self: center;
+  padding: 0.4rem 0.75rem;
+  color: #087f5b;
+  background: #d3f9e9;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lottery-live__winner-badge--muted {
+  color: var(--lottery-muted);
+  background: #eef1f5;
+}
+
+.lottery-live__winner-title {
+  margin: 0.7rem 0 0.35rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.lottery-live__winner-subtitle {
+  margin: 0;
+  color: var(--lottery-muted);
+}
+
+.lottery-live__winner-meta {
+  margin-top: 0.8rem;
+  color: var(--lottery-muted);
+  font-size: 0.85rem;
+}
+
+.lottery-live__actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.lottery-live__submit.button,
+.lottery-live__submit {
+  min-width: 150px;
+  padding: 0.85rem 1.25rem;
+  color: #ffffff;
+  background: var(--lottery-accent);
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(99, 91, 255, 0.25);
+  font-weight: 800;
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.lottery-live__submit.button:hover,
+.lottery-live__submit:hover {
+  color: #ffffff;
+  background: var(--lottery-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(99, 91, 255, 0.32);
+}
+
+.lottery-live__submit.is-pending {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.lottery-live__empty {
+  padding: clamp(2rem, 8vw, 6rem) 1rem;
+  text-align: center;
+}
+
+.lottery-live__empty-title {
+  margin: 0;
+  color: var(--lottery-ink);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.lottery-live__empty-text {
+  margin: 0.75rem auto 0;
+  color: var(--lottery-muted);
+}
+
+.lottery-live__celebration {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.lottery-live__fireworks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lottery-live__balloons {
+  position: absolute;
+  inset: 0;
+}
+
+.lottery-live__balloon {
+  position: absolute;
+  bottom: -60px;
+  width: 24px;
+  height: 31px;
+  border-radius: 50% 50% 45% 45%;
+  opacity: 0.85;
+  animation: lottery-live-balloon-rise linear infinite;
+}
+
+.lottery-live__balloon::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 1px;
+  height: 42px;
+  background: rgba(24, 34, 48, 0.25);
+  content: '';
+}
+
+@keyframes lottery-live-balloon-rise {
+  from { transform: translateY(0) rotate(-5deg); }
+  to { transform: translateY(-125vh) rotate(8deg); }
+}
+
+@media (max-width: 720px) {
+  .lottery-live {
+    margin: 1rem 0;
+    border-radius: 20px;
+  }
+
+  .lottery-live__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .lottery-live__actions {
+    justify-content: stretch;
+  }
+
+  .lottery-live__submit.button,
+  .lottery-live__submit {
+    width: 100%;
+  }
+}
