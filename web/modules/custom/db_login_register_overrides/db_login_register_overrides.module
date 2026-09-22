@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Drupal Brasil Login and Register Form Overrides module.
+ */
+
+/**
+ * Implements hook_form_alter() for the login and registration forms.
+ */
+function db_login_register_overrides_form_alter(
+  array &$form,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  string $form_id
+): void {
+  if (! in_array($form_id, ['user_login_form', 'user_register_form'], TRUE)) {
+    return;
+  }
+
+  if (isset($form['name'])) {
+    $form['name']['#description'] =
+      t('Use exatamente o mesmo nome de usuário (handle) cadastrado no Drupal.org.');
+
+    return;
+  }
+
+  if (isset($form['account'])) {
+    $form['account']['name']['#description'] =
+      t('Use exatamente o mesmo nome de usuário (handle) cadastrado no Drupal.org.')
+      . '<br>'
+      . t("Several special characters are allowed, including space, period (.), hyphen (-),
+       apostrophe ('), underscore (_), and the @ sign.");
+  }
+}

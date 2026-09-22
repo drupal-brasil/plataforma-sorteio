@@ -10,6 +10,7 @@ module:
   contextual: 0
   datetime: 0
   datetime_range: 0
+  db_login_register_overrides: 0
   db_lottery: 0
   db_lottery_subscription: 0
   db_prize: 0

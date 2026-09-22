@@ -1,0 +1,5 @@
+name: 'DB Login and Register Form Overrides'
+type: module
+description: 'DB Login and register Form Overrides'
+package: DrupalBrasil
+core_version_requirement: ^10 || ^11
